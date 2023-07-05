@@ -1,11 +1,16 @@
 import { useState } from 'react'
 
 const ShowStats = (stats) => {
+  let all = stats.good + stats.bad + stats.neutral
+  let average = (stats.good - stats.bad) / all;
     return(
       <>
         <p>good {stats.good}</p>
         <p>neutral {stats.neutral}</p>
         <p>bad {stats.bad}</p>
+        <p>all {all} </p>
+        <p>average {average}</p>
+        <p>positive {stats.good / all * 100}%</p>
       </>
     )
 }
