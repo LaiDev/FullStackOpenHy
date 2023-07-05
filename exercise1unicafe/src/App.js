@@ -3,6 +3,16 @@ import { useState } from 'react'
 const ShowStats = (stats) => {
   let all = stats.good + stats.bad + stats.neutral
   let average = (stats.good - stats.bad) / all;
+
+  if(all === 0)
+  {
+    return(
+      <>
+      <p>No feedback given</p>
+      </>
+    )
+  }
+
     return(
       <>
         <p>good {stats.good}</p>
